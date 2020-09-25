@@ -1,0 +1,95 @@
+* {box-sizing: border-box;}
+html {font-size: 100px}
+body {font-size: 0.16rem;}
+// 顶部--------------------------
+.login-top{
+    height: 1.25rem;
+    padding: 0 0.32rem;
+    overflow: hidden;
+    span:nth-of-type(1) {
+        float: left;
+        width: 0.44rem;
+        height: 0.44rem;
+        background: url('../images/login_img/login-one.png') no-repeat;
+        background-size: 0.44rem 0.44rem;
+        margin-top: 0.64rem;
+    }
+    span:nth-of-type(2) {
+        color: #666;
+        font-size: 0.3rem;
+        font-weight: bold;
+        float: right;
+        margin-top: 0.7rem;
+    }
+}
+// 迷音中部-------------------------------------------
+.login-main {
+    // border: 1px solid;
+    width: 6rem;
+    height: 5.65rem;
+    background: url('../images/login_img/logo.png') no-repeat center top;
+    background-size: 2.5rem 2.74rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) ;
+    >div {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        input {
+            width: 100%;
+            color: #999;
+            font-size: 0.28rem;
+            height: 0.8rem; 
+            line-height: 0.8rem;
+            text-align: center;
+            border: 0;
+            border-bottom: 0.03rem solid #ccc;
+            outline: none;
+        }
+        input:nth-of-type(1) { 
+            background: url('../images/login_img/login-two.png') no-repeat right center;
+            background-size: 0.44rem 0.44rem;
+        }
+    }
+}
+.login-mainTwo {
+    height: 4.2rem;
+    background: url('../images/login_img/login-three.png') no-repeat center 0.6rem;
+    background-size: 1.02rem 1.02rem;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: #666;
+    div:nth-of-type(1) { 
+        font-size: 0.26rem;
+        margin-bottom: 0.2rem;
+        letter-spacing: 0.05rem;
+        span:nth-of-type(2){
+            display: inline-block;
+            width: 0.01rem;
+            height: 0.2rem;
+            background: #ccc;
+            margin: 0 0.45rem;
+        }
+    }
+    div:nth-of-type(2) { 
+        font-size: 0.22rem;
+        letter-spacing: 0.05rem;
+        span { color: #999;}
+    }
+}
+// 底部图标--------------------------------
+.login-bottom {
+    padding-top: 0.45rem;
+    display: flex;
+    justify-content: center;
+    img { width: 0.9rem;height: 0.9rem;}
+    img:nth-of-type(2){
+        margin: 0 0.65rem;
+    }
+
+}

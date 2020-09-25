@@ -1,0 +1,137 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-23 15:01:28
+ * @LastEditTime: 2020-09-24 08:43:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: H:\Now study\移动端\移动端项目\迷音\login.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/touch-0.2.14.min.js"></script>
+
+    <link rel="shortcut icon" href="#"/>
+</head>
+
+<body>
+    <div class="login-top">
+        <span></span>
+        <span>帮助</span>
+    </div>
+    <!-- 迷音中部 -->
+    <div class="login-main">
+        <div>
+            <input type="text" class="phone" placeholder="请输入账号"
+            onfocus="this.placeholder=''" onblur="this.placeholder='请输入账号'"><br>
+            <input type="password" class="pass" placeholder="请输入密码"
+            onfocus="this.placeholder=''">
+        </div>
+    </div>
+    <div class="login-mainTwo">
+        <div>
+            <span>忘记密码</span>
+            <span></span>
+            <span><a href="./register.html">用户注册</a></span>
+        </div>
+        <div><span>登录即代表阅读并同意</span>服务协议</div>
+    </div>
+    <!-- 底部图标 -->
+    <div class="login-bottom">
+        <img src="./images/login_img/login-microblog.png" alt="">
+        <img src="./images/login_img/login-qq.png" alt="">
+        <img src="./images/login_img/login-WeChat.png" alt="">
+    </div>
+
+</body>
+
+</html>
+<script>
+    /* 手机号的验证 */
+    $('.phone').on('focus', function () {
+        $(this).css('color', 'black');
+        $(this).val('');
+    });
+    $('.phone').on('blur', function () {
+        if ($(this).val() == '') {
+            $(this).val('手机号码不能为空！');
+            $(this).css('color', 'red');
+            $(this)[0].bool = false;
+        }
+        else if ($(this).val().search(/^1[3578]\d{9}$/) == -1) {
+            $(this).val('请输入正确的手机号码!');
+            $(this).css('color', 'red')
+            $(this)[0].bool = false;
+        } else {
+            $(this).css('color', 'black')
+            $(this)[0].bool = true;
+        };
+    });
+
+    /* 验证密码 不能包含空格、回车、换行、中文字符，其他都可以，长度6到16位 */
+    $('.pass').on('focus',function(){
+        $(this).val('');
+        $(this).css('color', 'black');
+    });
+    var pass=$('.pass').val().search(/^[^\s\u4e00-\u9fa5]{6,16}$/);
+    $('.pass').on('blur',function(){
+        if($(this).val()==''){
+            $(this).val('');
+            $(this).attr('placeholder','密码不能为空！');
+            $(this)[0].bool = false;
+        }else if(pass !=-1){
+            $(this).val('');
+            $(this).attr('placeholder','6-16位,不含有汉字，空格等特殊字符');
+            $(this)[0].bool = false;
+        }else{
+            $(this)[0].bool = true;
+        }
+    });
+
+    // 登录-------------------
+    touch.on($('.login-mainTwo'),'tap',function(){
+        var ajax_bool =true;
+        $('.login-main input').each(function(){
+            var bol = $(this)[0].bool;
+            if (bol==false || $(this).val()==''){
+                alert('请完成合法输入！')
+                ajax_bool = false;
+                return false;
+            }
+        });
+        if(ajax_bool){
+            $.ajax({
+                url:'http://192.168.1.51:3000/users',
+                type:'post',
+                data:{
+                    type:'login',
+                    phone:$('.phone').val(),
+                    pass:$('.pass').val()
+                },
+                success:function(json){
+                    if(json.ok == true){
+                        window.location.href = './home.html';
+                    }
+                }
+            });
+        }
+    })
+</script>
+
+<script>
+    function setRem() {
+        var ui = 750;
+        var winWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        document.getElementsByTagName('html')[0].style.fontSize = (winWidth / ui) * 100 + 'px';
+    }
+    setRem();
+    window.onresize = setRem;
+</script>

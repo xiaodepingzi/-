@@ -1,0 +1,187 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-23 08:29:53
+ * @LastEditTime: 2020-09-24 09:10:06
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: H:\Now study\移动端\移动端项目\迷音\home.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/touch-0.2.14.min.js"></script>
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <div class="home-top">
+        <div>
+            <span></span>
+            <div>
+                <span>我的</span>
+                <span>音乐馆</span>
+                <span>发现</span>
+            </div>
+             <span></span>
+        </div>
+    </div>
+    <!-- 轮播 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./images/home_img/home-1.png" alt="1">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/home_img/home-2.jpg" alt="2">
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/home_img/home-3.jpg" alt="3">
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 分类 -->
+    <!-- 215 -->
+    <div class="home-sort">
+        <span>歌手</span>
+        <span>专辑</span>
+        <span>排行</span>
+        <span>电台</span>
+        <span>歌单</span>
+    </div>
+    <!-- 精选歌单 -->
+    <div class="home-sift">
+        <div>精选歌单</div>
+        <span>推荐</span>
+        <span>最新</span>
+    </div>
+    <!-- 音乐歌单 -->
+    <div class="home-music">
+        <!-- <div>
+            <img src="http://192.168.1.51:3000/images/home/10@2x.png" alt="">
+            <div>
+                <span>轻车上路，路飙向爱的乌托邦</span><br>
+                <span>安安静静做自己</span>
+            </div>
+        </div>
+        <div>
+            <img src="./images/home_img/11@2x.png" alt="">
+            <div>
+                <span>无为改变 生是见识</span><br>
+                <span>安安静静做自己</span>
+            </div>
+        </div>
+        <div>
+            <img src="./images/home_img/10@2x.png" alt="">
+            <div>
+                <span>劲爽热舞给自己的耳朵充电</span><br>
+                <span>安安静静做自己</span>
+            </div>
+        </div>
+        <div>
+            <img src="./images/home_img/11@2x.png" alt="">
+            <div>
+                <span>轻车上路</span><br>
+                <span>安安静静做自己</span>
+            </div>
+        </div>
+        <div>
+            <img src="./images/home_img/10@2x.png" alt="">
+            <div>
+                <span>轻车上路，路飙向爱的乌托邦</span><br>
+                <span>安安静静做自己</span>
+            </div>
+        </div>
+        <div>
+            <img src="./images/home_img/11@2x.png" alt="">
+            <div>
+                <span>路飙向爱的乌托邦</span><br>
+                <span>安安静静做自己</span>
+            </div>
+        </div> -->
+    </div>
+    <!-- 播放栏 play -->
+    <div class="home-play">
+        <div>
+            <img src="./images/home_img/50@2x.png" alt="" class="play-img">
+            <span>Where ls Your Love</span><br>
+            <span>横滑可以切换上下首哦</span>
+        </div>
+        <div>
+            <span class="music-play"></span>
+            <span></span>
+        </div>
+        <audio id="audio">
+            <source src="./mp3/向文涛 - 还有我（温柔男声）（Cover：任贤齐）.mp3" type="audio/ogg">
+                您的浏览器不支持 audio 元素。
+        </audio>
+    </div>
+    
+</body>
+
+</html>
+<script src="./js/swiper-bundle.js"></script>
+<script src="./js/home.js"></script>
+
+<script src="js/doT.min.js"></script>
+<!-- doT模板 -->
+<script id="doT_list" type="text/x-dot-template">
+    {{for(var i in it){}}
+        <div>
+            <img src={{=it[i].imgurl}} alt="">
+            <div>
+                <span>{{=it[i].info}}</span><br>
+                <span>{{=it[i].title}}</span>
+            </div>
+        </div>
+    {{}}}
+</script>
+<script>
+    $.ajax({  
+        url:"http://192.168.1.51:3000/home?type=new",
+        dataType: "json",
+        type: "get",
+        success:function(json){
+            var innerT = doT.template($('#doT_list').text());
+            $('.home-music').html(innerT(json.musicList));
+        }
+    });
+    
+    var mySwiper = new Swiper('.swiper-container', {
+        initialSlide:1, //默认显示图片
+        direction: 'horizontal', // 水平切换选项
+        effect : 'fade', //切换效果
+        loop: true, // 循环模式选项
+        speed:500, //动画时间
+        autoplay: {
+            delay: 1800,
+        },
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+            // progressbarOpposite: false,
+        }
+    })      
+    
+</script>
+
+<script>
+    function setRem() {
+        var ui = 750;
+        var winWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        console.log(ui, winWidth);
+        document.getElementsByTagName('html')[0].style.fontSize = (winWidth / ui) * 100 + 'px';
+    }
+    setRem();
+    window.onresize = setRem;
+</script>

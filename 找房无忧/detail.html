@@ -1,0 +1,230 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-23 16:57:30
+ * @LastEditTime: 2020-09-24 09:09:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: H:\Now study\移动端\移动端项目\买房无忧\detail.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <script src="./js/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <div class="total_">
+
+        <header class="head_detail">
+            <a href="#" class="head_1"></a>
+            <a href="#" class="head_2"></a>
+            <a href="#" class="head_3"></a>
+        </header>
+
+        <div class="banner_detail">
+            <div class="banner_scroll swiper-container">
+                <div class="img_ swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./image-detail/img.png" alt="#">
+                        <i>1/5</i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./image-detail/img1.png" alt="#">
+                        <i>2/5</i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./image-detail/img2.png" alt="#">
+                        <i>3/5</i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./image-detail/img3.png" alt="#">
+                        <i>4/5</i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./image-detail/img4.png" alt="#">
+                        <i>5/5</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail_infor">
+            <p>天鹅湾小区精装两居， 满五唯一， 业主换房急售</p>
+            <p><span>576</span><span></span>万元(单价： 46327元/平)</p>
+            <p>挂牌时间2015年6月20日</p>
+            <p><span>学区房</span><span>独家</span><span>满五唯一</span></p>
+        </div>
+
+        <ul class="detail_mass">
+            <li><span>户型：3室2厅</span><span>面积：100平</span></li>
+            <li><span>楼层：中楼层</span><span>朝向：西南</span></li>
+            <li><span>装修：精装</span><span>喽型：塔楼</span></li>
+            <li><span>年代：2004年</span><span>区域：西二旗</span></li>
+            <li><span>首付：123万</span><span>月供：15683元</span></li>
+            <li><span>地铁：离西二旗地铁站800米</span></li>
+            <li><span>小区：珠江帝景</span></li>
+            <li><span>学校：北京市第二实验小学</span></li>
+            <li>更多房源信息</li>
+        </ul>
+
+        <div class="special">
+            <p>房源特色</p>
+            <p>
+                小区环境优雅，虽处闹市中（小区南200米有美廉美超市、西30米有华联商场、星美国际影城、东北角就是大中电器、小区东100米有汇佳幼儿园、昌平实验一小，昆泰国际大酒...
+            </p>
+            <p>更多特色</p>
+        </div>
+
+        <div class="look_">
+            <p>户型分间</p>
+            <ul class="nav_3">
+                <li>
+                    <div class="list_">
+                        <div class="list_l">
+                            <img src="./image-detail/img4.png" alt="#">
+                        </div>
+                        <div class="list_r">
+                            <p>当前格局</p>
+                            <div class="infor_1">
+                                分间信息：客厅25平方米，南北通透
+                            </div>
+                            <div class="infor_3">
+                                <span>南北通透</span>
+                                <span>全明格局</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="list_">
+                        <div class="list_l">
+                            <img src="./image-detail/img5.png" alt="#">
+                        </div>
+                        <div class="list_r">
+                            <p>当前格局</p>
+                            <div class="infor_1">
+                                <span>分间信息：客厅25平方米，南北通透</span>
+                            </div>
+                            <div class="infor_3">
+                                <span>南北通透</span>
+                                <span>全明格局</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="school">
+            <p>对口学校</p>
+            <ul>
+                <li><span>学校名称：</span><span>北京市第二实验小学</span></li>
+                <li><span>升学方式：</span><span>直升、派位</span></li>
+                <li><span>对口中学：</span><span>团结湖中学</span></li>
+                <li><span>划分小区：</span><span>3个划片小区 在售房源150套</span></li>
+                <li><span>学校特色：</span><span>包住宿、有校车</span></li>
+                <li>查看学校详情</li>
+            </ul>
+        </div>
+        <div class="loca">
+            <p>位置及周边</p>
+            <div id="get_map"></div>
+        </div>
+
+        <ul class="detail_nav">
+            <li>
+                <div class="list_">
+                    <div class="list_l">
+                        <img src="./image-detail/img6.png" alt="#">
+                    </div>
+                    <div class="list_r">
+                        <p>文化部中间层  一层带阁楼</p>
+                        <div class="infor_1">
+                            <span>2室1厅96㎡南北</span>
+                            <span>1105万</span>
+                        </div>
+                        <div class="infor_2">
+                            <span>红庙北里</span>
+                            <span>14268元/平</span>
+                        </div>
+                        <div class="infor_3">
+                            <span>学区房</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nono_">
+                    推荐理由：同户型、通风好、采光好
+                    <span></span>
+                </div>
+            </li>
+            <li>
+                <div class="list_">
+                    <div class="list_l">
+                        <img src="./image-detail/img7.png" alt="#">
+                    </div>
+                    <div class="list_r">
+                        <p>光大水墨  精装复式 稀缺</p>
+                        <div class="infor_1">
+                            <span>室1厅96㎡南北</span>
+                            <span>280万</span>
+                        </div>
+                        <div class="infor_2">
+                            <span>光大水墨</span>
+                            <span>14268元/平</span>
+                        </div>
+                        <div class="infor_3">
+                            <span>学区房</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nono_">
+                    推荐理由：同户型、通风好、采光好
+                    <span></span>
+                </div>
+            </li>
+            <li>查看更多房源</li>
+        </ul>
+
+        <footer class="footer_">
+            <p>北京找房无忧 > 首页</p>
+            <ul class="footer_ul">
+                <li>
+                    <a href="#">iPhone客户端</a>
+                </li>
+                <li>
+                    <a href="#">Android客户端</a>
+                </li>
+            </ul>
+            <div class="footer_last">
+                <p><a href="#">北京找房无忧房地产经纪公司</a></p>
+                <p><a href="#"></a>网络经营许可证京ICP备20160812号</p>
+            </div>
+        </footer>
+
+        <div class="focus">
+            <div>联系经纪人</div>
+            <div>关注</div>
+        </div>
+
+    </div>
+</body>
+<script src=".//js/republic.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script src="./js/detail.js"></script>
+<script src="https://webapi.amap.com/maps?v=1.4.15&key=1b5127c0759ddb94151c611b15132c89"></script>
+<script>
+    var map = new AMap.Map('get_map', {
+        resizeEnable: true,
+        zoom:13,  
+        // center: [116.397428, 39.90923] 
+        center: [113.687202, 34.810331] //[经度（longitude），纬度(latitude)]
+    });
+</script>
+</html>

@@ -1,0 +1,247 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-23 16:57:30
+ * @LastEditTime: 2020-09-24 09:09:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: H:\Now study\移动端\移动端项目\买房无忧\list.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/list.css">
+    <script src="./js/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <div class="total_list">
+
+        <header class="head_list">
+            <a href="#" class="head_1"></a>
+            <a href="#" class="head_2"></a>
+            <a href="#" class="head_3"></a>
+        </header>
+
+        <div class="search_">
+            <input type="text" placeholder="请输入小区名或商圈名字">
+            <label>|</label>
+        </div>
+
+        <ul class="list_nav">
+            <li class="default">区域</li>
+            <li class="default">价格</li>
+            <li class="default">房型</li>
+            <li class="default">更多</li>
+        </ul>
+
+        <div class="down_list_1 a1">
+            <div class="list_li1_l">
+                <a href="#" class="li_1_active">区域</a>
+                <a href="#">地铁</a>
+                <p></p>
+            </div>
+            <div class="one list_li1_r_1">
+                <dl>
+                    <dd>附近</dd>
+                    <dd>不限</dd>
+                    <dd class="dd_active">朝阳</dd>
+                    <dd>海淀</dd>
+                    <dd>昌平</dd>
+                    <dd>丰台</dd>
+                    <dd>石景山</dd>
+                </dl>
+                <dl>
+                    <dd class="dd_active">不限</dd>
+                    <dd>安贞</dd>
+                    <dd>奥林匹克公园</dd>
+                    <dd>百子湾</dd>
+                    <dd>北工大</dd>
+                    <dd>北苑</dd>
+                    <dd>CBD</dd>
+                </dl>
+            </div>
+
+            <div class="two list_li1_r_1">
+                <dl>
+                    <dd  class="dd_active">不限</dd>
+                    <dd>安贞</dd>
+                    <dd>奥林匹克公园</dd>
+                    <dd>百子湾</dd>
+                    <dd>北工大</dd>
+                    <dd>北苑</dd>
+                    <dd>CBD</dd>
+                </dl>
+                <dl>
+                    <dd>附近</dd>
+                    <dd>不限</dd>
+                    <dd  class="dd_active">朝阳</dd>
+                    <dd>海淀</dd>
+                    <dd>昌平</dd>
+                    <dd>丰台</dd>
+                    <dd>石景山</dd> 
+                </dl>
+            </div>
+        </div>
+
+        <div class="down_list_2 a1">
+            <ul>
+                <li><a href="#" class="aa_active">不限</a></li>
+                <li><a href="#">100万以下</a></li>
+                <li><a href="#">100万-150万</a></li>
+                <li><a href="#">150万-200万</a></li>
+                <li><a href="#">200万-250万</a></li>
+                <li><a href="#">250万-300万</a></li>
+                <li><a href="#">自定义价格</a></li>
+            </ul>
+        </div>
+
+        <div class="down_list_3 a1">
+            <ul>
+                <li><a href="#">不限</a><span></span></li>
+                <li><a href="#">1室</a><span></span></li>
+                <li><a href="#">2室</a><span></span></li>
+                <li><a href="#">3室</a><span></span></li>
+                <li><a href="#">4室</a><span></span></li>
+                <li><a href="#">5室</a><span></span></li>
+                <li><button>确定</button></li>
+            </ul>
+        </div>
+
+        <div class="down_list_4 a1">
+            <div>
+                <p>区域</p>
+                <ul>
+                    <li>南</li>
+                    <li>南北</li>
+                    <li>东</li>
+                    <li>西</li>
+                    <li>北</li>
+                </ul>
+            </div>
+            <div>
+                <p>面积（平方）</p>
+                <ul>
+                    <li>50以下</li>
+                    <li>50-70</li>
+                    <li>70-90</li>
+                    <li>90-110</li>
+                    <li>110-130</li>
+                    <li>130-150</li>
+                    <li>150-200</li>
+                    <li>200以上</li>
+                </ul>
+            </div>
+            <div>
+                <p>标签</p>
+                <ul>
+                    <li>学区房</li>
+                    <li>地铁房</li>
+                    <li>不限购</li>
+                    <li>满两年</li>
+                    <li>满五唯一</li>
+                    <li>降价</li>
+                    <li>新上</li>
+                    <li>独家</li>
+                    <li>有钥匙</li>
+                </ul>
+            </div>
+            <div>
+                <p>楼龄</p>
+                <ul>
+                    <li>5年以内</li>
+                    <li>10年以内</li>
+                    <li>10-20年</li>
+                    <li>20年以上</li>
+                </ul>
+            </div>
+        </div>
+
+        <ul class="list_nav_2">
+            <li>
+                <div class="list_">
+                    <div class="list_l">
+                        <img src="./image-list/img1.png" alt="#">
+                    </div>
+                    <div class="list_r">
+                        <p>西便门外大街2室1厅89平</p>
+                        <div class="infor_1">
+                            <span>面北 高楼层/6层</span>
+                        </div>
+                        <div class="infor_2">
+                            <span>签约价格:13244元/平 </span>
+                            <span>1105万</span>
+                        </div>
+                        <div class="infor_3">
+                            <span>签约日期：2015年11月10日</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list_">
+                    <div class="list_l">
+                        <img src="./image-list/img2.png" alt="#">
+                    </div>
+                    <div class="list_r">
+                        <p>金桥国际 1室1厅 63平</p>
+                        <div class="infor_1">
+                            <span>面北 高楼层/6层</span>
+                        </div>
+                        <div class="infor_2">
+                            <span>签约价格:13244元/平 </span>
+                            <span>905万</span>
+                        </div>
+                        <div class="infor_3">
+                            <span>签约日期：2015年11月10日</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list_">
+                    <div class="list_l">
+                        <img src="./image-list/img3.png" alt="#">
+                    </div>
+                    <div class="list_r">
+                        <p>花涧溪二期 2室2厅</p>
+                        <div class="infor_1">
+                            <span>面北 高楼层/6层</span>
+                        </div>
+                        <div class="infor_2">
+                            <span>签约价格:13244元/平</span>
+                            <span>905万</span>
+                        </div>
+                        <div class="infor_3">
+                            <span>签约日期：2015年11月10日</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <footer class="footer_list">
+            <p>北京找房无忧 > 首页</p>
+            <ul class="footer_ul">
+                <li>
+                    <a href="#">iPhone客户端</a>
+                </li>
+                <li>
+                    <a href="#">Android客户端</a>
+                </li>
+            </ul>
+            <div class="footer_last">
+                <p><a href="#">北京找房无忧房地产经纪公司</a></p>
+                <p><a href="#"></a>网络经营许可证京ICP备20160812号</p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+<script src="./js/republic.js"></script>
+<script src="./js/list.js"></script>
+</html>
